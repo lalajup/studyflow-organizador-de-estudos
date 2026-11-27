@@ -23,10 +23,6 @@ def helper(info= None):
 #-----------------------------------------------------------------------------
 # Suas rotas aqui:
 
-@app.route('/studyflow')
-def studyflow():
-    return study_ctl.index()
-
 # Página principal do StudyFlow
 @app.route('/studyflow')
 def studyflow():
@@ -46,6 +42,11 @@ def adicionar_tarefa():
 @app.route('/api/tarefas/<tarefa_id:int>/concluir', method='POST')
 def concluir_tarefa(tarefa_id):
     return study_ctl.concluir_tarefa(tarefa_id)
+
+# Atualiza os dados de uma tarefa
+@app.route('/api/tarefas/<tarefa_id:int>', method='PUT')
+def atualizar_tarefa(tarefa_id):
+    return study_ctl.atualizar_tarefa(tarefa_id)
 
 @app.route('/api/tarefas/<tarefa_id:int>', method='DELETE')
 def excluir_tarefa(tarefa_id):

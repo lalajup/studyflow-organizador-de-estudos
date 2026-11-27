@@ -45,6 +45,42 @@ class StudyController:
         response.status = 201
 
         return json.dumps(tarefa, ensure_ascii=False)
+    
+    def atualizar_tarefa(self, tarefa_id):
+        response.content_type = 'application/json'
+
+        dados = request.json
+
+        if not dados:
+            response.status = 400
+            return json.dumps({
+                "erro": "Dados não enviados"
+            })
+
+        nome = dados.get("nome")
+        disciplina = dados.get("disciplina")
+        prazo = dados.get("prazo")
+
+        if not nome or not disciplina or not prazo:
+            response.status = 400
+            return json.dumps({
+                "erro": "Preencha todos os campos"
+            })
+
+        tarefa = self.modelo.atualizar(
+            int(tarefa_id),
+            nome,
+            disciplina,
+            prazo
+        )
+
+        if tarefa is None:
+            response.status = 404
+            return json.dumps({
+                "erro": "Tarefa não encontrada"
+            })
+
+        return json.dumps(tarefa, ensure_ascii=False)
 
     def concluir_tarefa(self, tarefa_id):
         response.content_type = 'application/json'

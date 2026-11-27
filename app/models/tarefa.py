@@ -57,6 +57,27 @@ class TarefaModel:
                 return tarefa
 
         return None
+
+    def atualizar(self, tarefa_id, nome, disciplina, prazo):
+        # Recupera as tarefas existentes
+        tarefas = self.listar()
+
+        # Procura a tarefa pelo identificador
+        for tarefa in tarefas:
+            if tarefa["id"] == tarefa_id:
+
+                # Atualiza os dados da tarefa
+                tarefa["nome"] = nome
+                tarefa["disciplina"] = disciplina
+                tarefa["prazo"] = prazo
+
+                # Salva as alterações no arquivo JSON
+                self.salvar(tarefas)
+
+                return tarefa
+
+        # Retorna None caso a tarefa não seja encontrada
+        return None
     
     def excluir(self, tarefa_id):
         # Recupera todas as tarefas

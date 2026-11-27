@@ -82,6 +82,42 @@
 
         </section>
 
+        <section class="panel" id="painel-edicao" hidden>
+
+            <h2>Editar tarefa</h2>
+
+            <form id="form-edicao">
+
+                <input
+                    type="text"
+                    id="editar-nome"
+                    placeholder="Nome da tarefa"
+                    required
+                >
+
+                <input
+                    type="text"
+                    id="editar-disciplina"
+                    placeholder="Disciplina"
+                    required
+                >
+
+                <input
+                    type="date"
+                    id="editar-prazo"
+                    required
+                >
+
+                <button type="submit">Salvar alterações</button>
+
+                <button type="button" id="cancelar-edicao">
+                    Cancelar
+                </button>
+
+            </form>
+
+        </section>
+
         <section class="panel">
 
             <h2>Minhas atividades</h2>
