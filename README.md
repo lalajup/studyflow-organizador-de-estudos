@@ -6,11 +6,21 @@ O **StudyFlow** é uma aplicação web desenvolvida para auxiliar estudantes na 
 
 - Cadastro de tarefas com nome, disciplina e prazo de entrega.
 - Listagem das tarefas cadastradas.
+- Edição de tarefas, permitindo atualizar nome, disciplina e prazo.
 - Marcação e desmarcação de tarefas concluídas.
 - Exclusão de tarefas.
 - Atualização automática dos indicadores de progresso.
 - Armazenamento dos dados em arquivo JSON.
 - Persistência das informações após atualizar a página.
+
+## Operações CRUD
+
+O sistema implementa as quatro operações fundamentais de manipulação de dados:
+
+- **Create (Criar):** cadastro de novas tarefas.
+- **Read (Ler):** consulta e listagem das tarefas.
+- **Update (Atulizar):** edição das informações das tarefas cadastradas.
+- **Delete (Excluir):** remoção das tarefas.
 
 ## Tecnologias utilizadas
 
@@ -114,8 +124,10 @@ http://localhost:8080/studyflow
 
 ## Armazenamento dos dados
 
-As tarefas são armazenadas localmente no arquivo `app/models/tarefas.json`, utilizando o formato JSON. Dessa maneira, as informações permanecem disponíveis após a atualização da página e entre execuções do servidor.
+As tarefas são armazenadas localmente no arquivo `app/models/tarefas.json`, utilizando o formato JSON. 
+
+As operações de cadastro, edição e exclusão atualizam os dados armazenados, permitindo que as informações permaneçam disponíveis após a atualização da página e entre execuções do servidor.
 
 ## Objetivo acadêmico
 
-Este projeto foi desenvolvido como atividade prática de desenvolvimento web, com o objetivo de aplicar conceitos de programação em Python, arquitetura MVC, integração entre front-end e back-end, manipulação de arquivos JSON e controle de versão com Git.
+Este projeto foi desenvolvido como atividade prática de desenvolvimento web, com o objetivo de aplicar conceitos de programação em Python, arquitetura MVC, operações CRUD, integração entre front-end e back-end, manipulação de arquivos JSON e controle de versão com Git.
